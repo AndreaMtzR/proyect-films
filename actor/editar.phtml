@@ -1,0 +1,52 @@
+<h1>Modificar Actor</h1>
+<?php View::content(); ?>
+<br>
+<hr>
+<!--Copiar dependencias de js-->
+<script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+		
+
+<form method="post" enctype="multipart/form-data">
+<div class="row">
+    <div class="col-4">
+    <label class="form-label">Nombre</label>
+    <input class="form-control" id="editor" name="actor[first_name]"><?= $actor->first_name ?></input>
+    </div>
+    <hr>
+    <div class="col-4">
+    <label class="form-label">Apellido</label>
+    <input class="form-control" id="editor" name="actor[last_name]"><?= $actor->last_name ?></input>
+    </div>
+    <hr>
+    <div class="col-4">
+    <label class="form-label">Edad</label>
+    <input class="form-control" id="editor" name="actor[edad]"><?= $actor->edad ?></input>
+    </div>
+    <hr>
+    <div class="col-12">
+    <br>
+    <label class="form-label">Descripción</label>
+    <textarea class="form-control" id="editor" name="actor[descripcion]"><?= $actor->descripcion ?></textarea>
+    <br>
+    <label for="imagen">Seleccionar imagen:</label>
+    <input type="file" name="imagen" id="imagen" accept="imagen/*">
+    <br>
+    <div class="col-3">
+        <img class="w-100" src="/KumbiaPHP/storage/actor/<?= $actor->id ?>.jpg?r=<?= uniqid() ?>">
+    </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="col-4">
+    <button type="Submit" class="btn btn-success" style="margin: 10px 10px 10px;">Guardar</button>
+    <a href="/kumbiaphp/actor/" class="btn btn-danger" style="margin: 10px 10px 10px;">Regresar</a>
+    </div>
+</div>
+</form>
+<!--Instruccion para que todos los text area se convieran en editores-->
+<script type="text/javascript">
+ 
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  </script>

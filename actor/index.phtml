@@ -1,0 +1,38 @@
+<h1>Actores</h1>
+
+<a href="/kumbiaphp/actor/nuevo" class="btn btn-primary" style="margin: 5px 5px 10px;"> Agregar Actor</a>
+
+<table id="myTable" class="table table-striped DataTable">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+        <th>Peliculas</th>
+        <th>Descripcion</th>
+        
+
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($actor as $a): ?>
+        <tr>
+            <td><?= $a-> id ?></td>
+            <td> <a href="/kumbiaphp/actor/ver/<?= $a->id ?>"> <?= $a->first_name ?></a> </td>
+            <td> <a href="/kumbiaphp/actor/ver/<?= $a->id ?>"> <?= $a->last_name ?></a> </td>
+            <td> <a href="/kumbiaphp/actor/ver/<?= $a->id ?>"> <?= $a->edad ?></a> </td>
+            <td><?= $a-> peliculas ?></td>
+            <td> <a href="/kumbiaphp/actor/ver/<?= $a->id ?>"> <?= $a->descripcion ?></a> </td>
+            
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+
+</table>
+
+    <script type="text/javascript">
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>

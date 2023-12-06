@@ -1,0 +1,17 @@
+<h1 >[<?= $peli->id ?>]Información del actor</h1>
+
+<a href="/kumbiaphp/actor/editar/<?= $peli->id ?>" class="btn btn-warning" style="margin: 5px 5px 10px;">Editar Actor</a>
+<a href="/kumbiaphp/actor" class="btn btn-danger">Regresar</a>
+
+<div class="row">
+    <div class="col-3">
+        <img class="w-100" src="/KumbiaPHP/storage/actor/<?= $peli->id ?>.jpg?r=<?= uniqid() ?>">
+    </div>
+    <div class="col-4">
+    <h3 class="border-bottom"><?= $peli->first_name . ' ' . $peli->last_name ?></h3>
+     <ul class="list-inline">
+        <p>Edad: <?= $peli->edad ?></p>
+        <p>Descripción: <?= $peli->descripcion ?></p>
+     </ul>
+    </div>
+</div>
